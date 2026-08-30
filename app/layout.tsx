@@ -4,6 +4,9 @@ export const metadata = {
   title: "PM SHRI Adarsh Vidyalaya",
   description:
     "Official website of PM SHRI Adarsh Vidyalaya, Barkhetri, Nalbari, Assam",
+  icons: {
+    icon: "/icon.jpeg",
+  },
 };
 
 export default function RootLayout({
