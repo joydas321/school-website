@@ -31,7 +31,7 @@ const adminSections = [
     color: "from-amber-500 to-orange-500",
   },
   {
-    icon: "👨‍🏫",
+    icon: "👨🏫",
     title: "Teachers & Staff",
     path: "/admin/staff",
     type: ["Teacher"],
@@ -62,13 +62,13 @@ const adminSections = [
     description: "Create and manage school events.",
     color: "from-red-500 to-rose-500",
   },
-  {
-    icon: "📄",
-    title: "Documents",
-    path: "/admin/documents",
-    type: ["Document"],
-    description: "Upload prospectus, PDFs and documents.",
-    color: "from-slate-500 to-slate-700",
+    {
+  icon: "📄",
+  title: "Mandatory Public Disclosure",
+  path: "/admin/documents",
+  type: ["Document"],
+  description: "Upload prospectus, Mandatory Public Disclosure.",
+  color: "from-slate-500 to-slate-700",
   },
   {
     icon: "🏫",
@@ -152,7 +152,6 @@ export default function AdminPage() {
         </div>
       </header>
 
-
       {/* MAIN */}
       <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
 
@@ -173,7 +172,6 @@ export default function AdminPage() {
           </p>
 
         </section>
-
 
         {/* QUICK STATS */}
         <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -201,7 +199,6 @@ export default function AdminPage() {
           ))}
 
         </section>
-
 
         {/* CONTENT MANAGEMENT */}
         <section className="mt-12">
@@ -239,7 +236,6 @@ export default function AdminPage() {
                   </div>
                 </div>
 
-
                 {/* CARD BODY */}
                 <div className="p-6">
 
@@ -266,7 +262,6 @@ export default function AdminPage() {
           </div>
 
         </section>
-
 
         {/* LIVE DATA */}
         <section className="mt-12 rounded-3xl bg-white p-7 shadow-sm">
@@ -307,7 +302,6 @@ export default function AdminPage() {
 
       </div>
 
-
       {/* FOOTER */}
       <footer className="mt-10 bg-[#071827] py-6 text-center text-sm text-slate-400">
 
@@ -334,3 +328,4 @@ export default function AdminPage() {
     </main>
   );
 }
+

@@ -20,7 +20,7 @@ const navItems = [
   ["Achievements", "#achievements"],
   ["Facilities", "#facilities"],
   ["Gallery", "#gallery"],
-  ["Jobs", "#jobs"],
+  ["Disclosure", "#disclosure"],
   ["Contact", "#contact"],
 ];
 
@@ -106,7 +106,7 @@ export default function Home() {
   );
 
   const documents = items.filter(
-    (item) => item.Type === "Document"
+    (item) => item.Type === ""
   );
 
   const facilities = items.filter(
@@ -1189,92 +1189,95 @@ export default function Home() {
       {/* =====================================================
           DOCUMENTS - ADMIN DATA ONLY
       ====================================================== */}
+{/* =====================================================
+    MANDATORY PUBLIC DISCLOSURE
+====================================================== */}
 
-      <section className="bg-slate-100 py-24">
+<section
+  id="disclosure"
+  className="bg-slate-100 py-24"
+>
+  <div className="mx-auto max-w-7xl px-5">
 
-        <div className="mx-auto max-w-7xl px-5">
+    <div className="text-center">
 
-          <div className="text-center">
+      <p className="font-black uppercase tracking-widest text-amber-500">
+        School Disclosure
+      </p>
 
-            <p className="font-black uppercase tracking-widest text-amber-500">
-              Resources
-            </p>
+      <h2 className="mt-3 text-4xl font-black text-[#102a43]">
+        Mandatory Public Disclosure
+      </h2>
 
-            <h2 className="mt-3 text-4xl font-black text-[#102a43]">
-              Documents
-            </h2>
+      <p className="mt-4 text-slate-600">
+        Important school information and mandatory public disclosure document.
+      </p>
 
-            <p className="mt-4 text-slate-600">
-              Documents uploaded from Admin Panel appear here.
-            </p>
+    </div>
 
-          </div>
+    <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
 
+      {loading ? (
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
-
-            {loading ? (
-
-              <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
-                Loading documents...
-              </div>
-
-            ) : documents.length === 0 ? (
-
-              <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
-                No documents uploaded yet.
-              </div>
-
-            ) : (
-
-              documents.map((item, index) => (
-
-                <article
-                  key={`${item.Title}-${index}`}
-                  className="rounded-3xl bg-white p-7 shadow"
-                >
-
-                  <div className="text-4xl">
-                    📄
-                  </div>
-
-                  <h3 className="mt-4 text-xl font-black text-[#102a43]">
-                    {item.Title || "School Document"}
-                  </h3>
-
-                  {item.Description && (
-                    <p className="mt-2 text-slate-600">
-                      {item.Description}
-                    </p>
-                  )}
-
-                  {item.Date && (
-                    <p className="mt-2 text-sm font-bold text-amber-600">
-                      {formatDate(item.Date)}
-                    </p>
-                  )}
-
-                  {item["Image URL"] && (
-                    <a
-                      href={item["Image URL"]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-block rounded-xl bg-[#102a43] px-5 py-3 font-bold text-white"
-                    >
-                      Open Document →
-                    </a>
-                  )}
-
-                </article>
-
-              ))
-
-            )}
-
-          </div>
-
+        <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
+          Loading disclosure document...
         </div>
 
+      ) : documents.length === 0 ? (
+
+        <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
+          Mandatory Public Disclosure document has not been uploaded yet.
+        </div>
+
+      ) : (
+
+        documents.map((item, index) => (
+
+          <article
+            key={`${item.Title}-${index}`}
+            className="rounded-3xl bg-white p-7 shadow"
+          >
+
+            <div className="text-4xl">
+              📄
+            </div>
+
+            <h3 className="mt-4 text-xl font-black text-[#102a43]">
+              Mandatory Public Disclosure
+            </h3>
+
+            {item.Description && (
+              <p className="mt-2 text-slate-600">
+                {item.Description}
+              </p>
+            )}
+
+            {item.Date && (
+              <p className="mt-2 text-sm font-bold text-amber-600">
+                {formatDate(item.Date)}
+              </p>
+            )}
+
+            {item["Image URL"] && (
+              <a
+                href={item["Image URL"]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-block rounded-xl bg-[#102a43] px-5 py-3 font-bold text-white transition hover:bg-[#183b5c]"
+              >
+                Open Mandatory Public Disclosure →
+              </a>
+            )}
+
+          </article>
+
+        ))
+
+      )}
+
+    </div>
+
+  </div>
       </section>
 
 
