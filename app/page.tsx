@@ -106,7 +106,7 @@ export default function Home() {
   );
 
   const documents = items.filter(
-    (item) => item.Type === ""
+  (item) => item.Type === "Document"
   );
 
   const facilities = items.filter(
@@ -1187,9 +1187,6 @@ export default function Home() {
 
 
       {/* =====================================================
-          DOCUMENTS - ADMIN DATA ONLY
-      ====================================================== */}
-{/* =====================================================
     MANDATORY PUBLIC DISCLOSURE
 ====================================================== */}
 
@@ -1199,6 +1196,7 @@ export default function Home() {
 >
   <div className="mx-auto max-w-7xl px-5">
 
+    {/* Section Heading */}
     <div className="text-center">
 
       <p className="font-black uppercase tracking-widest text-amber-500">
@@ -1210,23 +1208,24 @@ export default function Home() {
       </h2>
 
       <p className="mt-4 text-slate-600">
-        Important school information and mandatory public disclosure document.
+        Important school information and mandatory public disclosure documents.
       </p>
 
     </div>
 
+    {/* Documents */}
     <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-2">
 
       {loading ? (
 
         <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
-          Loading disclosure document...
+          Loading disclosure documents...
         </div>
 
       ) : documents.length === 0 ? (
 
         <div className="md:col-span-2 rounded-3xl bg-white p-10 text-center text-slate-500">
-          Mandatory Public Disclosure document has not been uploaded yet.
+          No disclosure documents uploaded yet.
         </div>
 
       ) : (
@@ -1235,29 +1234,34 @@ export default function Home() {
 
           <article
             key={`${item.Title}-${index}`}
-            className="rounded-3xl bg-white p-7 shadow"
+            className="rounded-3xl bg-white p-7 shadow transition hover:-translate-y-1 hover:shadow-lg"
           >
 
+            {/* PDF Icon */}
             <div className="text-4xl">
               📄
             </div>
 
+            {/* Document Title */}
             <h3 className="mt-4 text-xl font-black text-[#102a43]">
-              Mandatory Public Disclosure
+              {item.Title || "School Document"}
             </h3>
 
+            {/* Description */}
             {item.Description && (
               <p className="mt-2 text-slate-600">
                 {item.Description}
               </p>
             )}
 
+            {/* Date */}
             {item.Date && (
               <p className="mt-2 text-sm font-bold text-amber-600">
                 {formatDate(item.Date)}
               </p>
             )}
 
+            {/* Open Button */}
             {item["Image URL"] && (
               <a
                 href={item["Image URL"]}
@@ -1265,7 +1269,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-5 inline-block rounded-xl bg-[#102a43] px-5 py-3 font-bold text-white transition hover:bg-[#183b5c]"
               >
-                Open Mandatory Public Disclosure →
+                Open Document →
               </a>
             )}
 
